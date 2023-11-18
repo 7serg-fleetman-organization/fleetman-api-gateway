@@ -25,6 +25,9 @@ pipeline {
 
       stage('Build and Push Image') {
          steps {
+           sh 'hostname'
+           sh 'pwd'
+           sh 'whoami'
            sh 'docker image build -t ${REPOSITORY_TAG} .'
          }
       }
