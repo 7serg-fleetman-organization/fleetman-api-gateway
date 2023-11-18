@@ -34,6 +34,7 @@ pipeline {
 
       stage('Deploy to Cluster') {
           steps {
+                    sh 'echo ${REPOSITORY_TAG}
                     sh 'envsubst < ${WORKSPACE}/deploy.yaml | kubectl apply -f -'
           }
       }
